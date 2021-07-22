@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+        <variable
+            name="taskEntry"
+            type="com.lobrzut.todok.database.TaskEntry"/>
     </data>
 
     <androidx.cardview.widget.CardView
@@ -30,7 +32,8 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:text="Title" />
+                tools:text="Title"
+                android:text="@{taskEntry.title}"/>
 
             <TextView
                 android:id="@+id/taskCategory"
@@ -42,7 +45,8 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/taskTitle"
-                tools:text="Category" />
+                tools:text="Category"
+                app:setCategory="@{taskEntry.category}"/>
 
             <TextView
                 android:id="@+id/taskTimestamp"
@@ -54,7 +58,8 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/taskCategory"
-                tools:text="timestamp" />
+                tools:text="timestamp"
+                app:setTimestamp="@{taskEntry.timestamp}"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 </layout>
