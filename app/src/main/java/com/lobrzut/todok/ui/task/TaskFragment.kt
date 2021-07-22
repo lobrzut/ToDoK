@@ -15,7 +15,7 @@ import com.lobrzut.todok.viewmodel.TaskViewModel
 class TaskFragment : Fragment() {
 
     private val viewModel: TaskViewModel by viewModels()
-    private lateinit var adapter: TaskAadapter
+    private lateinit var adapter: TaskAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -27,7 +27,7 @@ class TaskFragment : Fragment() {
         binding.lifecycleOwner = this
         binding.viewModel = viewModel
 
-        adapter = TaskAadapter()
+        adapter = TaskAdapter(TaskClickListener { taskEntry -> findNavController().navigate(TaskFragmentDirections.actionTaskFragmentToUpdateFragment(taskEntry)) })
         viewModel.getAllTasks.observe(viewLifecycleOwner){
             adapter.submitList(it)
         }
