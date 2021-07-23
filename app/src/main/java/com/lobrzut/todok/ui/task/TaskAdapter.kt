@@ -28,6 +28,7 @@ class TaskAdapter(val clickListener: TaskClickListener) : ListAdapter<TaskEntry,
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+
         return ViewHolder(RowLayoutBinding.inflate(LayoutInflater.from(parent.context), parent, false))
     }
 

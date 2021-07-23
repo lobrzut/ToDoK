@@ -24,6 +24,7 @@ abstract class TaskDatabase: RoomDatabase() {
                     ).fallbackToDestructiveMigration()
                         .build()
                     INSTANCE = instance
+
                 }
                 return instance
             }

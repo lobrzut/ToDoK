@@ -15,9 +15,18 @@ interface TaskDao {
     @Update
     fun update(taskEntry: TaskEntry)
 
-    @Query("DELETE FROM task_table")
-    fun deleteAll()
+    /*@Query("DELETE FROM task_table")
+    fun deleteAll()*/
 
     @Query("SELECT * FROM task_table ORDER BY timestamp DESC")
-    fun getAllTasks():LiveData<List<TaskEntry>>
+    fun getAllTasks(): LiveData<List<TaskEntry>>
+
+   /* @Query("SELECT * FROM task_table")
+    fun isDbEmpty(): LiveData<Integer>*/
+
+
+
+
+
 }
+

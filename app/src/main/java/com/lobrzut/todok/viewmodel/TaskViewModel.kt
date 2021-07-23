@@ -17,10 +17,19 @@ class TaskViewModel(application: Application): AndroidViewModel(application) {
 
     val getAllTasks: LiveData<List<TaskEntry>>
 
+
     init {
         repository = TaskRepository(taskDao)
         getAllTasks = repository.getAllTasks()
+
+
     }
+
+ /*   fun isDbEmpty(taskEntry: TaskEntry) {
+        viewModelScope.launch(Dispatchers.IO) {
+            repository.isDbEmpty()
+        }
+    }*/
 
     fun insert(taskEntry: TaskEntry){
         viewModelScope.launch(Dispatchers.IO){
@@ -34,15 +43,16 @@ class TaskViewModel(application: Application): AndroidViewModel(application) {
         }
     }
 
-    fun deleteAll(taskEntry: TaskEntry){
-        viewModelScope.launch(Dispatchers.IO){
-            repository.delteAll()
-        }
-    }
+
     fun update(taskEntry: TaskEntry){
         viewModelScope.launch(Dispatchers.IO){
             repository.updateData(taskEntry)
         }
     }
+    /*fun deleteAll(taskEntry: TaskEntry){
+        viewModelScope.launch(Dispatchers.IO){
+            repository.deleteAll()
+        }
+    }*/
 
 }
