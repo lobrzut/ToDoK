@@ -1,0 +1,53 @@
+[33mcommit f6d774aa0eef124f6ae57bd73853382578071616[m[33m ([m[1;36mHEAD[m[33m)[m
+Author: lobrzut <48508079+lobrzut@users.noreply.github.com>
+Date:   Fri Jul 23 13:31:05 2021 +0200
+
+    dateWorking
+
+[33mcommit 8c2e91a2d152f9842171f23cc88a1b355732da08[m[33m ([m[1;31morigin/master[m[33m)[m
+Author: lobrzut <48508079+lobrzut@users.noreply.github.com>
+Date:   Thu Jul 22 17:45:34 2021 +0200
+
+    errorTaskFragment
+
+[33mcommit de407f3b393b414b63104bb8c0e320a49bd02894[m[33m ([m[1;32mmaster[m[33m)[m
+Author: lobrzut <48508079+lobrzut@users.noreply.github.com>
+Date:   Thu Jul 22 16:45:15 2021 +0200
+
+    mvvmAnim
+
+[33mcommit 95300159d46ff64a8920d7acde6d8e6197e216c9[m
+Author: lobrzut <48508079+lobrzut@users.noreply.github.com>
+Date:   Thu Jul 22 14:16:49 2021 +0200
+
+    TaskFragmentAdapter
+
+[33mcommit bf8840a72c0d4e46d9be8fcf67d3e4be6cd85b27[m
+Author: lobrzut <48508079+lobrzut@users.noreply.github.com>
+Date:   Thu Jul 22 13:21:41 2021 +0200
+
+    SendToDBoK
+
+[33mcommit 38565ff9b42c9643b12cd0cebb1a7b20335156be[m
+Author: lobrzut <48508079+lobrzut@users.noreply.github.com>
+Date:   Thu Jul 22 10:55:42 2021 +0200
+
+    LayoutRepair/appWorks
+
+[33mcommit d8c5dac76941496aba808604dee1ed0ef4881041[m
+Author: lobrzut <48508079+lobrzut@users.noreply.github.com>
+Date:   Thu Jul 22 10:21:46 2021 +0200
+
+    RecyclerViewLayout
+
+[33mcommit 40e552ce3e439eb755ce90d0853555827fbe959e[m
+Author: lobrzut <48508079+lobrzut@users.noreply.github.com>
+Date:   Thu Jul 22 09:23:14 2021 +0200
+
+    Database
+
+[33mcommit fb71ce68c18b1e479aa6dab06942f4ba2165692b[m
+Author: lobrzut <48508079+lobrzut@users.noreply.github.com>
+Date:   Thu Jul 22 08:26:59 2021 +0200
+
+    Start
