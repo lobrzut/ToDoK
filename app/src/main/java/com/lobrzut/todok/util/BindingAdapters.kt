@@ -30,3 +30,8 @@ fun setTimestamp(view: TextView, timestamp: Long){
     view.text = DateFormat.getInstance().format(timestamp)
 }
 
+/*
+@BindingAdapter("setCal")
+fun setDate(view: TextView, textView: TextView){
+    view.text = DateFormat.getInstance().format()
+}*/

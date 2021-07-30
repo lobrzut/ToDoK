@@ -1,10 +1,15 @@
 <resources>
     <string name="app_name">ToDoK</string>
-
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+
     <string-array name="categories">
-    <item>Work</item>
-    <item>Shopping</item>
-    <item>Others</item>
+        <item>Work</item>
+        <item>Shopping</item>
+        <item>Others</item>
     </string-array>
+
+
+
 </resources>

@@ -13,4 +13,5 @@ data class TaskEntry(
     var title: String,
     var category: Int,
     var timestamp: Long
+
     ) : Parcelable

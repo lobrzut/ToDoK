@@ -1,10 +1,8 @@
 package com.lobrzut.todok.ui.task
 
+import android.content.Intent
 import android.os.Bundle
-import android.text.TextUtils
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -13,8 +11,10 @@ import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.snackbar.Snackbar
 import com.lobrzut.todok.R
-import com.lobrzut.todok.database.TaskEntry
 import com.lobrzut.todok.databinding.FragmentTaskBinding
+import com.lobrzut.todok.ui.AboutActivity
+import com.lobrzut.todok.ui.MainActivity
+import com.lobrzut.todok.ui.add.AddFragment
 import com.lobrzut.todok.viewmodel.TaskViewModel
 
 
@@ -26,7 +26,7 @@ class TaskFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View? {
 
 
@@ -68,7 +68,7 @@ class TaskFragment : Fragment() {
             override fun onMove(
                 recyclerView: RecyclerView,
                 viewHolder: RecyclerView.ViewHolder,
-                target: RecyclerView.ViewHolder
+                target: RecyclerView.ViewHolder,
             ): Boolean {
                 return false
             }
@@ -94,19 +94,25 @@ class TaskFragment : Fragment() {
         return binding.root
     }
 
-    /* override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-         super.onCreateOptionsMenu(menu, inflater)
-         inflater.inflate(R.menu.task_menu, menu)
-     }*/
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.task_menu, menu)
+    }
 
-    /*override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
-            R.id.action_delete_all -> deleteAllItem()
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
+        val id = item.itemId
+        if (id == R.id.action_about) {
+            val intent = Intent(context, AboutActivity::class.java)
+
+            this.startActivity(intent)
         }
         return super.onOptionsItemSelected(item)
-    }*/
+    }
 
-    /*private fun deleteAllItem() {
+
+
+/*    private fun deleteAllItem() {
         AlertDialog.Builder(requireContext())
             .setTitle("Delete All")
             .setMessage("Are You sure?")
@@ -117,5 +123,6 @@ class TaskFragment : Fragment() {
                 dialog.dismiss()
             }.create().show()
     }*/
+
 
 }
