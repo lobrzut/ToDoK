@@ -47,6 +47,7 @@ class AddFragment : Fragment() {
                 val title_str = editTask.text.toString()
                 val cat = spinner.selectedItemPosition
 
+
                 val taskEntry = TaskEntry(0,title_str, cat, System.currentTimeMillis())
 
                 viewModel.insert(taskEntry)

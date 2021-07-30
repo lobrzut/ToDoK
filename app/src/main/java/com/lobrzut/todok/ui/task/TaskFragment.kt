@@ -1,9 +1,11 @@
 package com.lobrzut.todok.ui.task
 
 import android.os.Bundle
+import android.text.TextUtils
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -11,6 +13,7 @@ import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.snackbar.Snackbar
 import com.lobrzut.todok.R
+import com.lobrzut.todok.database.TaskEntry
 import com.lobrzut.todok.databinding.FragmentTaskBinding
 import com.lobrzut.todok.viewmodel.TaskViewModel
 
@@ -20,12 +23,11 @@ class TaskFragment : Fragment() {
     private val viewModel: TaskViewModel by viewModels()
     private lateinit var adapter: TaskAdapter
 
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
-
 
 
         val binding = FragmentTaskBinding.inflate(inflater)
@@ -33,19 +35,19 @@ class TaskFragment : Fragment() {
         binding.lifecycleOwner = this
         binding.viewModel = viewModel
 
-        //TOAST when db is empty
-
 
         adapter = TaskAdapter(TaskClickListener { taskEntry ->
             findNavController().navigate(
-                TaskFragmentDirections.actionTaskFragmentToUpdateFragment(
-                    taskEntry
-                )
-
+                TaskFragmentDirections.actionTaskFragmentToUpdateFragment(taskEntry)
             )
+
         })
         viewModel.getAllTasks.observe(viewLifecycleOwner) {
             adapter.submitList(it)
+
+            if (adapter.itemCount == 0) {
+                Toast.makeText(requireContext(), "Nothings Here", Toast.LENGTH_SHORT).show()
+            }
         }
 
 
@@ -57,9 +59,6 @@ class TaskFragment : Fragment() {
 
             }
         }
-
-
-
 
 
         ItemTouchHelper(object : ItemTouchHelper.SimpleCallback(
@@ -85,18 +84,20 @@ class TaskFragment : Fragment() {
                     }
                     show()
                 }
+
             }
 
         }).attachToRecyclerView(binding.recyclerView)
         setHasOptionsMenu(true)
 
+
         return binding.root
     }
 
-   /* override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        super.onCreateOptionsMenu(menu, inflater)
-        inflater.inflate(R.menu.task_menu, menu)
-    }*/
+    /* override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+         super.onCreateOptionsMenu(menu, inflater)
+         inflater.inflate(R.menu.task_menu, menu)
+     }*/
 
     /*override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {

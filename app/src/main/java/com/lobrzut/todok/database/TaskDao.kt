@@ -21,8 +21,7 @@ interface TaskDao {
     @Query("SELECT * FROM task_table ORDER BY timestamp DESC")
     fun getAllTasks(): LiveData<List<TaskEntry>>
 
-   /* @Query("SELECT * FROM task_table")
-    fun isDbEmpty(): LiveData<Integer>*/
+
 
 
 

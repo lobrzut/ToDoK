@@ -43,7 +43,7 @@
             android:layout_marginTop="20dp"
             android:ems="10"
             android:hint="Enter Date"
-            android:inputType="textPersonName"
+            android:text="00-00-0000"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
@@ -54,8 +54,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="SAVE"
-            app:layout_constraintTop_toBottomOf="@+id/date_picker"
-            tools:layout_editor_absoluteX="161dp" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/date_picker" />
 
         <Button
             android:id="@+id/btn_cancel"

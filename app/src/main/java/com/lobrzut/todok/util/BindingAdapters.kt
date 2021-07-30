@@ -1,9 +1,11 @@
 package com.lobrzut.todok.util
 
 import android.graphics.Color
+import android.widget.DatePicker
 import android.widget.TextView
 import androidx.databinding.BindingAdapter
 import java.text.DateFormat
+import java.util.*
 
 
 @BindingAdapter("setCategory")
@@ -27,3 +29,4 @@ fun setCategory(view: TextView, category: Int){
 fun setTimestamp(view: TextView, timestamp: Long){
     view.text = DateFormat.getInstance().format(timestamp)
 }
+

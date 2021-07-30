@@ -25,7 +25,7 @@ class TaskViewModel(application: Application): AndroidViewModel(application) {
 
     }
 
- /*   fun isDbEmpty(taskEntry: TaskEntry) {
+/*    fun isDbEmpty(taskEntry: TaskEntry) {
         viewModelScope.launch(Dispatchers.IO) {
             repository.isDbEmpty()
         }
